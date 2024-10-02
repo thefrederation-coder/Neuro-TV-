@@ -7,11 +7,11 @@
     <title>Welcome to Neuro - Choose Your Experience</title>
     
     <style>
-        /* Base styles */
+        /* Neuro Radio-inspired base styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #1a1a2e; /* Dark navy blue background for comfort */
+            color: #eaeaea; /* Light gray for readability */
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,14 +21,15 @@
 
         header {
             text-align: center;
-            background-color: #4a90e2;
-            color: white;
+            background-color: #0f3460; /* Darker blue tone */
+            color: #eaeaea;
             padding: 2rem 0;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            color: #00f2ff; /* Neon cyan */
         }
 
         header p {
@@ -46,16 +47,17 @@
 
         .option {
             text-align: center;
-            background-color: white;
-            border: 1px solid #ccc;
+            background-color: #16213e; /* Darker blue card background */
+            border: 1px solid #4ecca3; /* Soft greenish-cyan border */
             border-radius: 10px;
             padding: 1.5rem;
             width: 300px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .option:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(78, 204, 163, 0.4); /* Soft shadow on hover */
         }
 
         .option img {
@@ -66,37 +68,43 @@
         .option h2 {
             font-size: 1.5rem;
             margin-top: 1rem;
-            color: #00796b;
+            color: #4ecca3; /* Soft greenish-cyan */
         }
 
         .option p {
             margin: 1rem 0;
             font-size: 1rem;
+            color: #eaeaea;
         }
 
         .choose-btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #00796b;
-            color: white;
+            background-color: #00f2ff; /* Neon cyan button */
+            color: #16213e; /* Dark background for contrast */
             text-decoration: none;
             border-radius: 5px;
             font-size: 1.1rem;
+            transition: background-color 0.3s ease;
         }
 
         .choose-btn:hover {
-            background-color: #004d40;
+            background-color: #4ecca3; /* Lighter soft green on hover */
         }
 
         /* Footer */
         footer {
             text-align: center;
-            background-color: #00796b;
-            color: white;
+            background-color: #0f3460;
+            color: #eaeaea;
             padding: 1rem;
             position: relative;
             width: 100%;
             margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -111,15 +119,16 @@
             <div class="option neuro-tv">
                 <img src="neuro-tv-logo.png" alt="Neuro TV Logo">
                 <h2>Neuro TV</h2>
-                <p>Watch live streams and video content.</p>
+                <p>If you want general Neurodiverse-friendly content, click Neuro TV.</p>
                 <a href="#neuro-tv" class="choose-btn" id="neuro-tv-btn">Go to Neuro TV</a>
             </div>
 
             <div class="option neuro-radio">
                 <img src="neuro-radio-logo.png" alt="Neuro Radio Logo">
                 <h2>Neuro Radio</h2>
-                <p>Listen to live music and radio shows.</p>
-                <a href="#neuro-radio" class="choose-btn" id="neuro-radio-btn">Go to Neuro Radio</a>
+                <p>If you want music-related content that is still Neurodiverse-friendly, click Neuro Radio.</p>
+                <!-- Link to Neuro Radio website -->
+                <a href="https://neuroradio.uk/" target="_blank" class="choose-btn" id="neuro-radio-btn">Go to Neuro Radio</a>
             </div>
         </div>
     </div>
@@ -131,16 +140,10 @@
     <script>
         // JavaScript to handle button clicks and redirects
         const neuroTVBtn = document.getElementById('neuro-tv-btn');
-        const neuroRadioBtn = document.getElementById('neuro-radio-btn');
 
         neuroTVBtn.addEventListener('click', function() {
             // Redirect to Neuro TV page (replace with actual Neuro TV URL)
             window.location.href = 'neuro-tv.html';
-        });
-
-        neuroRadioBtn.addEventListener('click', function() {
-            // Redirect to Neuro Radio page (replace with actual Neuro Radio URL)
-            window.location.href = 'neuro-radio.html';
         });
     </script>
 </body>
