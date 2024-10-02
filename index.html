@@ -1,3 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to Neuro - Choose Your Experience</title>
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<button onclick="document.body.classList.toggle('increase-font')">Increase Font Size</button>
-<button onclick="document.body.classList.toggle('decrease-font')">Decrease Font Size</button>
+        header {
+            text-align: center;
+            background-color: #4a90e2;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            margin-top: 10px;
+        }
+
+        /* Options container */
+        .options-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .option {
+            text-align: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .option:hover {
+            transform: scale(1.05);
+        }
+
+        .option img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .option h2 {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #00796b;
+        }
+
+        .option p {
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+
+        .choose-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .choose-btn:hover {
+            background-color: #004d40;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-page">
+        <header>
+            <h1>Welcome to Neuro!</h1>
+            <p>Choose your experience: Are you here for <strong>Video</strong> or <strong>Radio</strong>?</p>
+        </header>
+
+        <div class="options-container">
+            <div class="option neuro-tv">
+                <img src="neuro-tv-logo.png" alt="Neuro TV Logo">
+                <h2>Neuro TV</h2>
+                <p>Watch live streams and video content.</p>
+                <a href="#neuro-tv" class="choose-btn" id="neuro-tv-btn">Go to Neuro TV</a>
+            </div>
+
+            <div class="option neuro-radio">
+                <img src="neuro-radio-logo.png" alt="Neuro Radio Logo">
+                <h2>Neuro Radio</h2>
+                <p>Listen to live music and radio shows.</p>
+                <a href="#neuro-radio" class="choose-btn" id="neuro-radio-btn">Go to Neuro Radio</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Neuro Media. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle button clicks and redirects
+        const neuroTVBtn = document.getElementById('neuro-tv-btn');
+        const neuroRadioBtn = document.getElementById('neuro-radio-btn');
+
+        neuroTVBtn.addEventListener('click', function() {
+            // Redirect to Neuro TV page (replace with actual Neuro TV URL)
+            window.location.href = 'neuro-tv.html';
+        });
+
+        neuroRadioBtn.addEventListener('click', function() {
+            // Redirect to Neuro Radio page (replace with actual Neuro Radio URL)
+            window.location.href = 'neuro-radio.html';
+        });
+    </script>
+</body>
+</html>
