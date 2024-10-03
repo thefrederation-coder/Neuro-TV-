@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Neuro TV & Radio - Broadcast Style</title>
-    
+    <title>Welcome to Neuro TV</title>
+
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #1a1a2e;
-            color: #eaeaea;
+            background-color: #a8d8ea; /* Light sky blue background */
+            color: #4d3c2e; /* Dark brown text color */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,21 +21,26 @@
             min-height: 100vh;
             text-align: center;
             position: relative;
+            background-image: url('https://example.com/fairy-tale-background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        /* TV Frame look */
-        .tv-frame {
+        .fairytale-frame {
             padding: 20px;
-            border: 15px solid #0f3460;
+            border: 10px solid #f4a261; /* Light orange border */
             border-radius: 25px;
-            background-color: #16213e;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
             width: 90%;
-            max-width: 900px;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .tv-frame h1 {
+        .fairytale-frame h1 {
             font-size: 3rem;
-            color: #00f2ff;
+            color: #e76f51; /* Coral color */
+            font-family: 'Georgia', serif; /* Use a serif font for a fairytale feel */
+            text-shadow: 1px 1px 2px #000; /* Text shadow for depth */
         }
 
         .link-container {
@@ -47,18 +53,38 @@
         .link-btn {
             display: inline-block;
             padding: 20px 30px;
-            background-color: #4ecca3;
-            color: #16213e;
+            background-color: #2a9d8f; /* Teal background */
+            color: #fff; /* White text */
             text-decoration: none;
             border-radius: 10px;
             font-size: 1.5rem;
             font-weight: bold;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .link-btn:hover {
-            background-color: #00f2ff;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
+            background-color: #e9c46a; /* Light yellow on hover */
+            box-shadow: 0 4px 15px rgba(233, 196, 106, 0.5);
+        }
+
+        .link-btn::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            z-index: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .link-btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .dropdown {
@@ -69,7 +95,7 @@
 
         .dropdown-link {
             padding: 15px 25px;
-            background-color: #16213e;
+            background-color: #264653; /* Dark teal */
             color: #eaeaea;
             text-decoration: none;
             border-radius: 5px;
@@ -78,14 +104,14 @@
         }
 
         .dropdown-link:hover {
-            background-color: #4ecca3;
+            background-color: #e9c46a; /* Light yellow */
         }
 
         #other-content {
             cursor: pointer;
             border: none;
-            background-color: #4ecca3;
-            color: #16213e;
+            background-color: #2a9d8f; /* Teal */
+            color: #fff;
             font-size: 1.5rem;
             padding: 15px 30px;
             border-radius: 10px;
@@ -94,8 +120,8 @@
         }
 
         #other-content:hover {
-            background-color: #00f2ff;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
+            background-color: #e76f51; /* Coral on hover */
+            box-shadow: 0 4px 15px rgba(231, 111, 81, 0.5);
         }
 
         /* Ticker Bar */
@@ -103,8 +129,8 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #0f3460;
-            color: #00f2ff;
+            background-color: #264653; /* Dark teal */
+            color: #e9c46a; /* Light yellow */
             font-size: 1.2rem;
             padding: 10px 0;
             text-align: center;
@@ -122,82 +148,11 @@
             0% {
                 transform: translateX(100%);
             }
+
             100% {
                 transform: translateX(-100%);
             }
         }
 
         .upcoming-videos {
-            margin-top: 30px;
-            background-color: #16213e;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 900px;
-            color: #eaeaea;
-        }
-
-        .upcoming-videos h2 {
-            font-size: 2rem;
-            color: #00f2ff;
-        }
-
-        footer {
-            margin-top: 20px;
-            color: #b0b0b0;
-            font-size: 0.9rem;
-        }
-    </style>
-
-    <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("dropdown-links");
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "flex";
-            } else {
-                dropdown.style.display = "none";
-            }
-        }
-    </script>
-</head>
-<body>
-    <!-- TV Frame -->
-    <div class="tv-frame">
-        <header>
-            <h1>Welcome to Neuro TV</h1>
-            <p>The unofficial but still approved by the owner sister company to Neuro Radio.</p>
-        </header>
-
-        <!-- Buttons -->
-        <div class="link-container">
-            <a href="https://youtube.com/@genrefluid?si=qmH4SI_qdN9_2sTA" target="_blank" class="link-btn">Neuro TV</a>
-            <a href="https://neuroradio.uk/" target="_blank" class="link-btn">Neuro Radio</a>
-
-            <!-- Other Content Button -->
-            <button id="other-content" onclick="toggleDropdown()">Other Content</button>
-
-            <!-- Dropdown Links -->
-            <div id="dropdown-links" class="dropdown">
-                <a href="https://www.tiktok.com/@genrefluidmaitered?_t=8qF9TIiwYD2&_r=1" target="_blank" class="dropdown-link">TikTok</a>
-                <a href="https://www.instagram.com/" target="_blank" class="dropdown-link">Instagram</a>
-                <a href="https://www.facebook.com/" target="_blank" class="dropdown-link">Facebook</a>
-            </div>
-        </div>
-
-        <!-- Upcoming Videos Placeholder -->
-        <div class="upcoming-videos">
-            <h2>Upcoming Videos</h2>
-            <p>Stay tuned for exciting content coming soon!</p>
-        </div>
-    </div>
-
-    <!-- Ticker Bar -->
-    <div class="ticker">
-        <div class="ticker-text">Coming up on Neuro Radio: Tune in for great shows and events! Check out the schedule at <a href="https://neuroradio.uk/events/" style="color: #00f2ff; text-decoration: underline;">Neuro Radio Events</a></div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Neuro Media. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+            margin-top
