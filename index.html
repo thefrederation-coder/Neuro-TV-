@@ -8,34 +8,124 @@
     <title>Welcome to Neuro TV</title>
 
     <style>
-        /* ... (your original styles) ... */
-
         /* Gothic-style typography */
         body {
             font-family: 'Blackadder ITC', serif; /* Replace 'Blackadder ITC' with your preferred Gothic font */
+            background-image: url('https://example.com/fairytale-background.jpg'); /* Replace with your elegant background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #3b2a2a; /* Darker brown text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
         }
 
-        h1 {
+        .fairytale-frame {
+            padding: 40px;
+            border: 10px solid #e4b363; /* Light gold border */
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .fairytale-frame h1 {
             font-size: 4rem;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #6c4f4f; /* Soft dark color */
+            font-family: 'Georgia', serif; /* Elegant serif font */
+            text-shadow: 1px 1px 2px #fff; /* Light text shadow for depth */
         }
 
-        p {
+        .fairytale-frame p {
             font-size: 1.5rem;
+            margin: 20px 0;
+            color: #4b3d3d; /* Slightly darker text for contrast */
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 20px;
         }
 
         .link-btn {
-            font-family: 'Blackadder ITC', serif; /* Use the same Gothic font for buttons */
-            letter-spacing: 1px;
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #c4d600; /* Light green background */
+            color: #3b2a2a; /* Dark text */
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* ... (other styles) ... */
+        .link-btn:hover {
+            background-color: #6c4f4f; /* Darker on hover */
+            color: #fff; /* Change text color to white on hover */
+            box-shadow: 0 4px 15px rgba(108, 79, 79, 0.5);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's on top */
+        }
+
+        .loading-text {
+            font-family: 'Blackadder ITC', serif;
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            animation: loading-animation 2s infinite;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Hide loading screen initially */
+        .loading-screen {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to Neuro TV</h1>
-    <p>This is a sample paragraph with Gothic-style typography.</p>
-</body>
-</html>
+    <div class="fairytale-frame">
+        <h1>Welcome to Neuro TV</h1>
+        <p>The unofficial but still approved by the owner sister company to Neuro Radio.</p>
+
+        <div class="link-container">
+            <a href="https://youtube.com/@genrefluid?si=qmH4SI_qdN9_2sTA" class="link-btn">Neuro TV</a>
+            <a href="https://neuroradio.uk/" class="link-btn">Neuro Radio</a>
+            <button id="other-content" class="link-btn">Other Content</button>
+            <div class="dropdown" id="dropdown-content">
+                <a href="https://www.tiktok.com/@genrefluidmaitered?_t=8qF9TIiwYD2&_r=1" class="dropdown-link">TikTok</a>
+                <a href="https://www
