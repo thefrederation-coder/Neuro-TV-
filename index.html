@@ -8,161 +8,48 @@
     <title>Welcome to Neuro TV</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #a8d8ea; /* Light sky blue background */
-            color: #4d3c2e; /* Dark brown text color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            position: relative;
-            background-image: url('https://example.com/fairy-tale-background.jpg'); /* Replace with your background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+        /* ... (existing styles) ... */
 
-        .fairytale-frame {
-            padding: 20px;
-            border: 10px solid #f4a261; /* Light orange border */
-            border-radius: 25px;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .fairytale-frame h1 {
-            font-size: 3rem;
-            color: #e76f51; /* Coral color */
-            font-family: 'Georgia', serif; /* Use a serif font for a fairytale feel */
-            text-shadow: 1px 1px 2px #000; /* Text shadow for depth */
-        }
-
-        .link-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 20px;
-        }
-
-        .link-btn {
-            display: inline-block;
-            padding: 20px 30px;
-            background-color: #2a9d8f; /* Teal background */
-            color: #fff; /* White text */
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link-btn:hover {
-            background-color: #e9c46a; /* Light yellow on hover */
-            box-shadow: 0 4px 15px rgba(233, 196, 106, 0.5);
-        }
-
-        .link-btn::after {
-            content: '';
+        .font-toggle-btn {
             position: absolute;
-            left: 50%;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #c4d600;
+            color: #3b2a2a;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .larger-font {
+            font-size: 1.2rem; /* Adjust font size as needed */
+        }
+
+        .ticker-pause-btn {
+            position: absolute;
             top: 50%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.6s ease;
-            z-index: 0;
-            transform: translate(-50%, -50%) scale(0);
+            right: 10px;
+            transform: translateY(-50%);
+            padding: 5px 10px;
+            background-color: #c4d600;
+            color: #3b2a2a;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        .link-btn:hover::after {
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Ticker Bar */
-        .ticker {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #264653; /* Dark teal */
-            color: #e9c46a; /* Light yellow */
-            font-size: 1.2rem;
-            padding: 10px 0;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .ticker-text {
-            display: inline-block;
-            white-space: nowrap;
-            padding-left: 100%;
-            animation: ticker-move 15s linear infinite;
-        }
-
-        @keyframes ticker-move {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .upcoming-videos {
-            margin-top: 20px;
-            background-color: #e9c46a; /* Light yellow */
-            padding: 15px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 800px;
-            text-align: left;
-            color: #264653; /* Dark teal */
-        }
+        /* ... (other styles) ... */
     </style>
 </head>
 
 <body>
     <div class="fairytale-frame">
         <h1>Welcome to Neuro TV</h1>
-        <p>The unofficial but still approved by the owner sister company to Neuro Radio</p>
+        <p>The unofficial but still approved by the owner sister company to Neuro Radio.</p>
 
         <div class="link-container">
             <a href="https://youtube.com/@genrefluid?si=qmH4SI_qdN9_2sTA" class="link-btn">Neuro TV</a>
-            <button id="other-content">Other Content</button>
+            <a href="https://neuroradio.uk/" class="link-btn">Neuro Radio</a>
+            <button id="other-content" class="link-btn">Other Content</button>
             <div class="dropdown" id="dropdown-content">
                 <a href="https://www.tiktok.com/@genrefluidmaitered?_t=8qF9TIiwYD2&_r=1" class="dropdown-link">TikTok</a>
-                <a href="https://www.instagram.com/your_instagram/" class="dropdown-link">Instagram</a>
-                <a href="https://www.twitter.com/your_twitter/" class="dropdown-link">Twitter</a>
-                <!-- Add other links as needed -->
-            </div>
-        </div>
-    </div>
-
-    <div class="upcoming-videos">
-        <h2>Upcoming Videos</h2>
-        <p>Stay tuned for our next great content!</p>
-        <!-- You can add a list of upcoming videos here -->
-    </div>
-
-    <div class="ticker">
-        <span class="ticker-text">Coming up on Neuro Radio: Check out our latest events and shows! Visit <a href="https://neuroradio.uk/events/" style="color: #e9c46a;">Neuro Radio Events</a></span>
-    </div>
-
-    <script>
-        document.getElementById('other-content').addEventListener('click', function () {
-            const dropdown = document.getElementById('dropdown-content');
-            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
-        });
-    </script>
-</body>
-
-</html>
+                <a href="https://www
