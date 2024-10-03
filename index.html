@@ -87,43 +87,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        .dropdown {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .dropdown-link {
-            padding: 15px 25px;
-            background-color: #264653; /* Dark teal */
-            color: #eaeaea;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-link:hover {
-            background-color: #e9c46a; /* Light yellow */
-        }
-
-        #other-content {
-            cursor: pointer;
-            border: none;
-            background-color: #2a9d8f; /* Teal */
-            color: #fff;
-            font-size: 1.5rem;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #other-content:hover {
-            background-color: #e76f51; /* Coral on hover */
-            box-shadow: 0 4px 15px rgba(231, 111, 81, 0.5);
-        }
-
         /* Ticker Bar */
         .ticker {
             position: fixed;
@@ -155,4 +118,51 @@
         }
 
         .upcoming-videos {
-            margin-top
+            margin-top: 20px;
+            background-color: #e9c46a; /* Light yellow */
+            padding: 15px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
+            color: #264653; /* Dark teal */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fairytale-frame">
+        <h1>Welcome to Neuro TV</h1>
+        <p>The unofficial but still approved by the owner sister company to Neuro Radio</p>
+
+        <div class="link-container">
+            <a href="https://youtube.com/@genrefluid?si=qmH4SI_qdN9_2sTA" class="link-btn">Neuro TV</a>
+            <button id="other-content">Other Content</button>
+            <div class="dropdown" id="dropdown-content">
+                <a href="https://www.tiktok.com/@genrefluidmaitered?_t=8qF9TIiwYD2&_r=1" class="dropdown-link">TikTok</a>
+                <a href="https://www.instagram.com/your_instagram/" class="dropdown-link">Instagram</a>
+                <a href="https://www.twitter.com/your_twitter/" class="dropdown-link">Twitter</a>
+                <!-- Add other links as needed -->
+            </div>
+        </div>
+    </div>
+
+    <div class="upcoming-videos">
+        <h2>Upcoming Videos</h2>
+        <p>Stay tuned for our next great content!</p>
+        <!-- You can add a list of upcoming videos here -->
+    </div>
+
+    <div class="ticker">
+        <span class="ticker-text">Coming up on Neuro Radio: Check out our latest events and shows! Visit <a href="https://neuroradio.uk/events/" style="color: #e9c46a;">Neuro Radio Events</a></span>
+    </div>
+
+    <script>
+        document.getElementById('other-content').addEventListener('click', function () {
+            const dropdown = document.getElementById('dropdown-content');
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+
+</html>
