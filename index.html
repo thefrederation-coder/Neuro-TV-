@@ -4,129 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome to Neuro - Choose Your Experience</title>
-    
+    <title>Neuro TV & Radio</title>
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1a1a2e;
-            color: #eaeaea;
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f3460, #1a1a2e);
+            color: #eaeaea;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
+            text-align: center;
         }
 
         header {
-            text-align: center;
-            background-color: #0f3460;
-            color: #eaeaea;
-            padding: 2rem 0;
+            margin-bottom: 30px;
         }
 
         header h1 {
-            margin: 0;
             font-size: 2.5rem;
+            margin: 0;
             color: #00f2ff;
         }
 
         header p {
             font-size: 1.25rem;
             margin-top: 10px;
+            color: #b0b0b0;
         }
 
-        .options-container {
+        .link-container {
             display: flex;
-            justify-content: center;
-            padding: 2rem;
-            gap: 2rem;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            gap: 1.5rem;
         }
 
-        .option {
-            text-align: center;
-            background-color: #16213e;
-            border: 1px solid #4ecca3;
-            border-radius: 10px;
-            padding: 1.5rem;
-            width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .option:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(78, 204, 163, 0.4);
-        }
-
-        .option img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .option h2 {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            color: #4ecca3;
-        }
-
-        .option p {
-            margin: 1rem 0;
-            font-size: 1rem;
-            color: #eaeaea;
-        }
-
-        .choose-btn {
+        .link-btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #00f2ff;
+            padding: 15px 30px;
+            background-color: #4ecca3;
             color: #16213e;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .choose-btn:hover {
-            background-color: #4ecca3;
+        .link-btn:hover {
+            background-color: #00f2ff;
+            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.3);
         }
 
         footer {
-            text-align: center;
-            background-color: #0f3460;
-            color: #eaeaea;
-            padding: 1rem;
-            position: relative;
-            width: 100%;
-            margin-top: auto;
+            position: absolute;
+            bottom: 10px;
+            color: #b0b0b0;
+            font-size: 0.9rem;
         }
 
-        footer p {
-            margin: 0;
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="landing-page">
-        <header>
-            <h1>Welcome to Neuro!</h1>
-            <p>Choose your experience: Are you here for <strong>Video</strong> or <strong>Radio</strong>?</p>
-        </header>
+    <header>
+        <img src="neuro-logo.png" alt="Neuro Logo" class="logo"> <!-- Replace with actual logo file -->
+        <h1>Welcome to Neuro</h1>
+        <p>Select your destination:</p>
+    </header>
 
-        <div class="options-container">
-            <div class="option neuro-tv">
-                <img src="neuro-tv-logo.png" alt="Neuro TV Logo">
-                <h2>Neuro TV</h2>
-                <p>If you want general Neurodiverse-friendly content, click Neuro TV.</p>
-                <a href="neuro-tv.html" class="choose-btn">Go to Neuro TV</a> <!-- Neuro TV Link -->
-            </div>
-
-            <div class="option neuro-radio">
-                <img src="neuro-radio-logo.png" alt="Neuro Radio Logo">
-                <h2>Neuro Radio</h2>
-                <p>If you want music-related content that is still Neurodiverse-friendly, click Neuro Radio.</p>
-                <a href="https://neuroradio.uk/" target="_blank" class="choose-btn">Go to Neuro Radio</a> <!-- Neuro Radio Link -->
-            </div>
-        </div>
+    <div class="link-container">
+        <a href="https://youtube.com/@genrefluid?si=qmH4SI_qdN9_2sTA" target="_blank" class="link-btn">Neuro TV</a>
+        <a href="https://neuroradio.uk/" target="_blank" class="link-btn">Neuro Radio</a>
     </div>
 
     <footer>
